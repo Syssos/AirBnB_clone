@@ -1,0 +1,1 @@
+This is a repository dedicated to the AirBnB clone. This will be updated in the future, for now this is a place holder.
