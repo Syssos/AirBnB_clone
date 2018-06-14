@@ -25,17 +25,6 @@ class BaseModel():
             self.updated_at = datetime.now()
             models.storage.new(self)
 
-    def __str__(self):
-        """ Prints str magic method (prints class info)
-        """
-        return ('[{}] ({}) {}'.format(
-            type(self).__name__, self.id, self.__dict__))
-
-    def __repr__(self):
-        """ prints string representation
-        """
-        return self.__str__()
-
     def save(self):
         """ This saves the update time of the module
         """
@@ -50,3 +39,14 @@ class BaseModel():
         new_dict['updated_at'] = datetime.now().isoformat()
         new_dict['created_at'] = datetime.now().isoformat()
         return new_dict
+
+    def __str__(self):
+        """ Prints str magic method (prints class info)
+        """
+        return ('[{}] ({}) {}'.format(
+            type(self).__name__, self.id, self.__dict__))
+
+    def __repr__(self):
+        """ prints string representation
+        """
+        return self.__str__()
