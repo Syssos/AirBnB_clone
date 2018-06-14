@@ -4,7 +4,7 @@
 import cmd, sys, shlex, models, json
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
-
+from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     
@@ -28,14 +28,19 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, args):
         """
         """
+        print(args)
         if len(args) is 0:
             print ('** class name missing **')
-        elif args != "BaseModel":
-            print('** class doesn\'t exist **')
-        else:
+        elif args == "BaseModel":
             new = BaseModel()
             new.save()
             print(new.id)
+        elif args == "User":
+            new_1 = User()
+            new_1.save()
+            print(new_1.id)
+        else:
+            print('** class doesn\'t exist **')
 
     def do_show(self, args):
         """
@@ -45,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
             print('** class name missing **')
         if len(args) is 1:
             print('** instance id missing **')
-        if args[0] != "BaseModel":
+        if args[0] != "BaseModel" and args[0] != "User":
             print('** class doesn\'t exist **')
         else:
             key = "{}.{}".format(args[0], args[1])
@@ -63,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
             print('** class name missing **')
         if len(args) is 1:
             print('** instance id missing **')
-        if args[0] != "BaseModel":
+        if args[0] != "BaseModel" and args[0] != "User":
             print('** class doesn\'t exist **')
         else:
             key = "{}.{}".format(args[0], args[1])
@@ -78,17 +83,30 @@ class HBNBCommand(cmd.Cmd):
         """
         """
         args = shlex.split(args)
-        if args != 'BaseModel':
+        if len(args) > 0 and args[0] != 'BaseModel' and args[0] != 'User':
             print('** class doesn\'t exist **')
-        temp_dict = models.storage.all()
-        for x in temp_dict:
-            print([temp_dict[x]])
+        else:
+            temp_dict = models.storage.all()
+            for x in temp_dict:
+                print([temp_dict[x]])
     
     def do_update(self, args):
         """
         """
         args = shlex.split(args)
-        
+        if len(args) == 0: 
+            print("** class name missing **") 
+        elif len(args) == 1: 
+            print("** instance id missing **") 
+        elif len(args) == 2: 
+            print("** attribute name missing **") 
+        elif len(args) == 4: 
+            class_id = "{}.{}".format(args[0], args[1]) 
+            setattr(models.storage.all()[class_id], args[2], args[3]) 
+            models.storage.all()[class_id].save() 
+        else:
+            print("** value missing **")
+
 
 #FileStorage.__file_path
 if __name__ == '__main__':

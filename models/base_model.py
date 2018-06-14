@@ -15,10 +15,10 @@ class BaseModel:
                 kwargs['id'] = str(uuid.uuid4())
             if 'created_at' not in kwargs:
                 kwargs['created_at'] = datetime.now()
-            if 'updated_at' not in kwargs:
-                kwargs['updated_at'] = datetime.now()
             elif not isinstance(kwargs['created_at'], datetime):
                 kwargs['created_at'] = datetime.strptime(kwargs['created_at'], "%Y-%m-%dT%H:%M:%S.%f")
+            if 'updated_at' not in kwargs:
+                kwargs['updated_at'] = datetime.now()
             elif not isinstance(kwargs['updated_at'], datetime):
                 kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'], "%Y-%m-%dT%H:%M:%S.%f")
             for i, x in kwargs.items():
