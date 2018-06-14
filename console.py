@@ -33,7 +33,6 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, args):
         """
         """
-        print(args)
         if len(args) is 0:
             print('** class name missing **')
         elif args == "BaseModel":
