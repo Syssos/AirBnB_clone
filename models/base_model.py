@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import uuid
 from datetime import datetime
 import models
 import json
 
 
-class BaseModel:
+class BaseModel():
     """ turns obects to instances
     """
     def __init__(self, *args, **kwargs):
