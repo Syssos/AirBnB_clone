@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """ This is a command interpreter for the AirBnB clone
 """
-import cmd, sys, shlex, models, json
+import cmd
+import sys
+import shlex
+import models
+import json
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models.user import User
 
+
 class HBNBCommand(cmd.Cmd):
-    
+
     instances_of = []
 
     def emptyline(self):
@@ -19,7 +24,7 @@ class HBNBCommand(cmd.Cmd):
         """ Ctrl + D will exit program
         """
         return True
-    
+
     def do_quit(self, args):
         """ Quit command to exit program
         """
@@ -30,7 +35,7 @@ class HBNBCommand(cmd.Cmd):
         """
         print(args)
         if len(args) is 0:
-            print ('** class name missing **')
+            print('** class name missing **')
         elif args == "BaseModel":
             new = BaseModel()
             new.save()
@@ -89,26 +94,25 @@ class HBNBCommand(cmd.Cmd):
             temp_dict = models.storage.all()
             for x in temp_dict:
                 print([temp_dict[x]])
-    
+
     def do_update(self, args):
         """
         """
         args = shlex.split(args)
-        if len(args) == 0: 
-            print("** class name missing **") 
-        elif len(args) == 1: 
-            print("** instance id missing **") 
-        elif len(args) == 2: 
-            print("** attribute name missing **") 
-        elif len(args) == 4: 
-            class_id = "{}.{}".format(args[0], args[1]) 
-            setattr(models.storage.all()[class_id], args[2], args[3]) 
-            models.storage.all()[class_id].save() 
+        if len(args) == 0:
+            print("** class name missing **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        elif len(args) == 2:
+            print("** attribute name missing **")
+        elif len(args) == 4:
+            class_id = "{}.{}".format(args[0], args[1])
+            setattr(models.storage.all()[class_id], args[2], args[3])
+            models.storage.all()[class_id].save()
         else:
             print("** value missing **")
 
 
-#FileStorage.__file_path
 if __name__ == '__main__':
     prompt = HBNBCommand()
     prompt.prompt = '(hbnb) '

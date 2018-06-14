@@ -10,8 +10,8 @@ import os
 class FileStorage(object):
     """
     """
-    __file_path = 'file.json' #path to json file
-    __objects = {} #dict to store obj's ex: (absemodel.21221212)
+    __file_path = 'file.json'
+    __objects = {}
 
     def new(self, obj):
         """ sets in __objects the obj with key <obj class name>.id
@@ -36,7 +36,8 @@ class FileStorage(object):
                 pass
 
     def reload(self):
-        """ deserializes the JSON file to __objects (only if the JSON file exists ; otherwise, do nothing)
+        """ deserializes the JSON file to __objects
+        (only if the JSON file exists ; otherwise, do nothing)
         """
         filename = self.__file_path
         try:
