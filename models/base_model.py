@@ -6,7 +6,8 @@ import json
 
 
 class BaseModel:
-
+    """ turns obects to instances
+    """
     def __init__(self, *args, **kwargs):
         """ sets up BaseModel class
         """
@@ -31,6 +32,8 @@ class BaseModel:
             type(self).__name__, self.id, self.__dict__))
 
     def __repr__(self):
+        """ prints string representation
+        """
         return self.__str__()
 
     def save(self):
@@ -40,6 +43,8 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
+        """ Saves information on class to a dict.
+        """
         new_dict = dict(self.__dict__)
         new_dict['__class__'] = type(self).__name__
         new_dict['updated_at'] = datetime.now().isoformat()
