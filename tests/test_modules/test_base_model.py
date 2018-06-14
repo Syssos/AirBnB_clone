@@ -21,7 +21,7 @@ class TestBaseModelClass(unittest.TestCase):
         cls.bas1.number = 90
 
     @classmethod
-    def RemoveClass(cls):
+    def tearDown(cls):
         """ Deletes instances after each test
         """
         del cls.bas1
