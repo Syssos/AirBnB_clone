@@ -75,12 +75,17 @@ ul.states {
     padding: 0;
 }
 li.state {
-    padding-left: 15px;
+    padding-left: 40px;
     padding-top: 5px;
+}
+li.amen {
+padding-left: 40px;
+padding-top: 15px;
 }
 h2 {
     text-align: left;
-    padding: 10px;
+    padding-top: 30px;
+    padding-left: 30px;
     font-size: 16px;
 }
 a {
