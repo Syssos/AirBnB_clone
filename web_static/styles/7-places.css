@@ -1,0 +1,35 @@
+h1 {
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+}
+h2.art {
+    font-size: 30px;
+    text-align: center;
+    vertical-align:middle;
+    padding: 0px;
+    margin: 0px;
+}
+
+article.mainart {
+    width: 390px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px;
+    
+}
+article.secondart {
+    width: 390px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px;
+    
+}
+section.places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 25px;
+}
