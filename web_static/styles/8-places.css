@@ -1,0 +1,93 @@
+h1 {
+    font-size: 30px;
+    padding-top: 10px;
+    margin: 0px;
+}
+h2.art {
+    font-size: 30px;
+    text-align: center;
+    vertical-align:middle;
+    padding: 0px;
+    margin: 0px;
+}
+
+article.mainart {
+    width: 390px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px;
+    
+}
+article.secondart {
+    width: 390px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px;
+    
+}
+section.places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 25px;
+}
+div.price_by_night {
+    color: #FF5A5F;
+    border:  4px solid #FF5A5F;
+    border-radius: 50%;
+    width: 70px;
+    height: 60px;
+    font-size: 30px;
+    margin-left: 80%;
+    margin-top: -50px;
+    margin-bottom: 5px;
+    text-align: center;
+    display: block;
+    line-height: 60px;
+}
+
+h2.art, div.price_by_night {
+    text-align: center;
+}
+div.mainart {
+    text-align: center;
+    padding: 15px;
+}
+div.information {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    height: 80px;
+    display: flex;
+    background-position: center;
+    text-align: center;
+}
+div.max_guest {
+    width: 100px;
+    background-image: url(C:/Users/Cody/AppData/Local/Packages/CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc/LocalState/rootfs/home/Cody/AirBnB_clone/web_static/images/guests_icon.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-right: 30px;
+    padding-top: 50px;
+}
+div.number_rooms {
+    width: 100px;
+    background-image: url(C:/Users/Cody/AppData/Local/Packages/CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc/LocalState/rootfs/home/Cody/AirBnB_clone/web_static/images/bed_icon.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-right: 30px;
+    padding-top: 50px;
+}
+div.number_bathrooms {
+    width: 100px;
+    background-image: url(C:/Users/Cody/AppData/Local/Packages/CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc/LocalState/rootfs/home/Cody/AirBnB_clone/web_static/images/bath_icon.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 50px;
+}
+div.user {
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
